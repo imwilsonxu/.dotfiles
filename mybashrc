@@ -42,7 +42,8 @@ alias dfh="df -h"
 alias o="gnome-open "
 alias perlreplace="perl -p -i -e "
 
-# Grep
+# grep
+export GREP_OPTIONS='--color=always'
 alias pygrep='grep --include=*.py -Ir '
 alias rbgrep='grep --include=*.rb -Ir '
 alias htmlgrep='grep --include=*.html -Ir '

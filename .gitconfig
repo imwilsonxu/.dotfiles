@@ -30,6 +30,7 @@
     um = checkout --
     last = log -1 HEAD
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    la = !git lg | head -1
     lgp = log -p
     it = !git init && git add . && git commit -m \"initial commit\"
     todo = !git grep --color=always --no-index --exclude-standard --heading --break --ignore-case -e ' FIX: *' -e ' TODO: *' | sed -e 's/^[[:space:]]*//'
