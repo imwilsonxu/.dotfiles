@@ -2,10 +2,22 @@
 
 My collection of dotfiles, please use anything you find useful.
 
-* aliases: useful aliases
-* dircolors: color of directory
-* gitconfig: git config
-* gitignore\_global: global git ignore settings
-* hgrc: mercurial config
+## Shell
+
+* env.sh: for shell
+* .curlrc: for curl
+* .tmux: for tmux
+
+## Git
+
+* .gitconfig: git config
+* .gitignore\_global: global git ignore settings
+
+## Python
+
 * pip.conf: faster pip in China
 * pylintrc: pylint config
+
+## Others
+
+* my.cnf: for MySQL

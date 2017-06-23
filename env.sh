@@ -1,14 +1,6 @@
-#!/bin/bash
-
-export CLICOLOR=1
-
-# Colors
-LIGHT_CYAN="\[\033[1;36m\]"
-GREEN="\[\033[0;32m\]"
-RED="\[\033[0;31m\]"
-NO_COLOR="\[\e[0m\]"
-
-export EDITOR='vim'
+# -------
+# General
+# -------
 
 # Commands history
 # http://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/
@@ -20,34 +12,40 @@ export HISTCONTROL=ignoredups
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *"
 
-# Enable vi editing mode
+# Use vim
+export EDITOR='vim'
 set -o vi
 
-source ~/.dotfiles/aliases
+# -------
+# Aliases
+# -------
 
-#############
+alias v='vim -p'
+alias c='clear'
+alias e='exit'
+alias ..="cd .."
+alias ...="cd ../.."
+alias py='python'
+
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
+alias gitconfig="vim ~/.gitconfig"
+
+# grep
+export GREP_OPTIONS='--color=always'
+alias pygrep='grep --include=*.py -Ir '
+alias htmlgrep='grep --include=*.html -Ir '
+alias jsgrep='grep --include=*.js -Ir '
+
+# ---------
 # Functions
-#############
+# ---------
 
-extract() {
-    if [ -f $1 ] ; then
-        case $1 in
-            *.tar.bz2)  tar xjf $1      ;;
-            *.tar.gz)   tar xzf $1      ;;
-            *.bz2)      bunzip2 $1      ;;
-            *.rar)      rar x $1        ;;
-            *.gz)       gunzip $1       ;;
-            *.tar)      tar xf $1       ;;
-            *.tbz2)     tar xjf $1      ;;
-            *.tgz)      tar xzf $1      ;;
-            *.zip)      unzip $1        ;;
-            *.Z)        uncompress $1   ;;
-            *)          echo "'$1' cannot be extracted via extract()" ;;
-        esac
-    else
-        echo "'$1' is not a valid file"
-    fi
-}
+function f() { find . -iname "*$1*" ${@:2} }
+
+function r() { grep "$1" ${@:2} -R . }
+
+function mkcd() { mkdir -p "$@" && cd "$_"; }
 
 psgrep() {
     if [ ! -z $1 ] ; then
@@ -82,11 +80,6 @@ dirsize() {
     rm -rf /tmp/list
 }
 
-# Show current git branch in command prompt.
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
 function rp() {
     if [[ $# == 3 ]]; then
         pattern=$1
@@ -97,8 +90,3 @@ function rp() {
         sed "s/$pattern/$replacement/g" < "$filename.old" > "$filename"
     fi
 }
-
-# \u: user
-# \h: host
-# \w: abspath
-# export PS1="[\u@\h ${LIGHT_CYAN}\w${GREEN}\$(parse_git_branch)${NO_COLOR}]^o^ "
