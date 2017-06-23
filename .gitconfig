@@ -25,18 +25,14 @@
     di = diff
     br = branch
     unstage = reset HEAD
-    us = reset HEAD
     unmodify = checkout --
-    um = checkout --
     last = log -1 HEAD
+    changes = log --pretty=format:%h %cr %cn %Cgreen%s%Creset --name-status
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     la = !git lg | head -1
     lgp = log -p
     it = !git init && git add . && git commit -m \"initial commit\"
     todo = !git grep --color=always --no-index --exclude-standard --heading --break --ignore-case -e ' FIX: *' -e ' TODO: *' | sed -e 's/^[[:space:]]*//'
-# http://sip-router.org/wiki/git/gitconfig
-#[branch "master"]
-    #mergeoptions = --no-commit --no-ff
 [credential]
 	helper = cache
 [push]
