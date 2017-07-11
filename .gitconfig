@@ -1,13 +1,13 @@
 [user]
     name = imwilsonxu
-    email = im.wilson.xu@gmail.com
+    email = imwilsonxu@gmail.com
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [core]
     editor = vim
     autocrlf = false
     # http://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-mode-changes-chmod
-	filemode = false
+    filemode = false
     excludesfile = ~/.dotfiles/.gitignore_global
 [merge]
     tool = vimdiff
@@ -26,6 +26,7 @@
     br = branch
     unstage = reset HEAD
     unmodify = checkout --
+    cleanfd = clean -fd
     last = log -1 HEAD
     changes = log --pretty=format:%h %cr %cn %Cgreen%s%Creset --name-status
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
@@ -34,6 +35,6 @@
     it = !git init && git add . && git commit -m \"initial commit\"
     todo = !git grep --color=always --no-index --exclude-standard --heading --break --ignore-case -e ' FIX: *' -e ' TODO: *' | sed -e 's/^[[:space:]]*//'
 [credential]
-	helper = cache
+    helper = cache
 [push]
-	default = current
+    default = current
