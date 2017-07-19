@@ -21,3 +21,4 @@ My collection of dotfiles, please use anything you find useful.
 ## Others
 
 * my.cnf: for MySQL
+* Brewfile: `brew bundle dump --force`
