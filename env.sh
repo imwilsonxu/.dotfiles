@@ -26,6 +26,7 @@ alias e='exit'
 alias ..="cd .."
 alias ...="cd ../.."
 alias py='python'
+alias py3='python3'
 
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
