@@ -27,6 +27,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias py='python'
 alias py3='python3'
+alias cloc="cloc --read-lang-def=$HOME/.dotfiles/my_cloc_def.txt"
 
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
