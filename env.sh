@@ -33,6 +33,12 @@ alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 alias gitconfig="vim ~/.gitconfig"
 
+alias root="sudo su -"
+alias myip="ip -br -c a"
+alias process="ps -aux"
+# macOS only
+alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+
 # grep
 export GREP_OPTIONS='--color=always'
 alias pygrep='grep --include=*.py -Ir '
